@@ -69,8 +69,10 @@ configMap:
         subdomain: auth0213
     redis:
       enabled: true
-      host: authelia-redis-master.authelia.svc.cluster.local
+      host: authelia-redis.authelia.svc.cluster.local
       port: 6379
+      password:
+        disabled: true
 
   # Storage - PostgreSQL (CNPG cluster)
   storage:
@@ -153,6 +155,8 @@ secret:
 redis:
   enabled: true
   architecture: standalone
+  auth:
+    enabled: false
   master:
     resources:
       requests:
