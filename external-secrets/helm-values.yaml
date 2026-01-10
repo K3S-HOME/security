@@ -7,11 +7,10 @@ replicaCount: 1
 # 리소스 제한
 resources:
   requests:
-    cpu: 5m  # Reduced from 20m based on actual usage (1m)
-    memory: 128Mi
+    cpu: 15m
+    memory: 100Mi
   limits:
-    # cpu: removed to prevent throttling
-    memory: 128Mi
+    memory: 100Mi
 
 # 동시 실행 제한
 concurrent: 3
@@ -28,11 +27,10 @@ webhook:
   replicaCount: 1
   resources:
     requests:
-      cpu: 2m  # Reduced from 10m based on actual usage (1m)
-      memory: 128Mi
+      cpu: 15m
+      memory: 100Mi
     limits:
-      # cpu: removed to prevent throttling
-      memory: 128Mi
+      memory: 100Mi
   # Affinity - Soft Anti-Affinity to spread pods across nodes
   affinity:
     podAntiAffinity:
@@ -49,11 +47,10 @@ certController:
   replicaCount: 1
   resources:
     requests:
-      cpu: 2m  # Reduced from 10m based on actual usage (1m)
-      memory: 256Mi
+      cpu: 15m
+      memory: 283Mi
     limits:
-      # cpu: removed to prevent throttling
-      memory: 256Mi
+      memory: 283Mi
   # Affinity - Soft Anti-Affinity to spread pods across nodes
   affinity:
     podAntiAffinity:
