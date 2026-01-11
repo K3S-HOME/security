@@ -12,13 +12,12 @@ image:
   repository: falcosecurity/falco
   tag: 0.40.0
 
-# Resource settings (VPA lowerBound/upperBound)
+# Resource settings (no CPU limit for stability)
 resources:
   requests:
     cpu: 34m
     memory: 93Mi
   limits:
-    cpu: 53m
     memory: 177Mi
 
 # Falco configuration
